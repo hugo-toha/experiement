@@ -30,12 +30,12 @@ jobs:
     # A "Issue" or "Pull Request" will go into "Features" project only if:
     # 1. The "Issue" has "feature_request" label
     # 2 The "Pull Request" has "feature" label
-    # if: |
-    #   contains(github.event.issue.labels.*.name, 'feature_request') ||
-    #   contains(github.event.pull_request.labels.*.name, 'feature')
+    if: |
+      contains(github.event.issue.labels.*.name, 'feature_request') ||
+      contains(github.event.pull_request.labels.*.name, 'feature')
     steps:
       # A "Issue" or "Pull Request" will be added in "To do" colum only if:
-      # 1. The "Issue" was newly opened, reopened, labeled or unlabeled
+      # 1. The "Issue" was newly opened, reopened or labels were updated
       # 2. No "Pull Requests" should be in "To do" column
       - name: Assign to "To do" column
         uses: srggrs/assign-one-project-github-action@1.2.0
