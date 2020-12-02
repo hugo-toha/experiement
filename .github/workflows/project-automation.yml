@@ -3,7 +3,7 @@ name: Project Automation
 on:
   issues:
     # run this action when the following events occurs on an issue
-    types: [opened, closed, reopened, unlabeled, connected]
+    types: [opened, closed, reopened, labeled, unlabeled, connected]
   pull_request:
     # run this action when the following events occurs on a pull request
     types:
