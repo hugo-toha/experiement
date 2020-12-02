@@ -43,7 +43,7 @@ jobs:
           github.event.action == 'opened' ||
           github.event.action == 'reopened' ||
           github.event.action == 'labeled' ||
-          github.event.action == 'unlableled'
+          github.event.action == 'unlabeled'
         with:
           project: "https://github.com/orgs/hugo-toha/projects/1"
           column_name: "To do"
