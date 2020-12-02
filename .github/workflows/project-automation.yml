@@ -17,9 +17,9 @@ jobs:
     # A "Issue" or "Pull Request" will go into "Features" project only if:
     # 1. The "Issue" has "feature_request" label
     # 2 The "Pull Request" has "feature" label
-    if: |
-      contains(github.event.issue.labels.*.name, 'feature_request') ||
-      contains(github.event.pull_request.labels.*.name, 'feature')
+    # if: |
+    #   contains(github.event.issue.labels.*.name, 'feature_request') ||
+    #   contains(github.event.pull_request.labels.*.name, 'feature')
     steps:
       # A "Issue" or "Pull Request" will be added in "To do" colum only if:
       # 1. The "Issue" was newly opened or reopened
