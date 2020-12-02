@@ -2,8 +2,10 @@ name: Project Automation
 
 on:
   issues:
-    types: [opened, closed, reopened,, unlabeled, connected]
+    # run this action when the following events occurs on an issue
+    types: [opened, closed, reopened, unlabeled, connected]
   pull_request:
+    # run this action when the following events occurs on a pull request
     types: [opened, closed, reopened, labeled, unlabeled, ready_for_review, review_requested, review_request_removed, review_dismissed, reviewed, merged]
 env:
   MY_GITHUB_TOKEN: ${{ secrets.PROJECT_TOKEN }}
