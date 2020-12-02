@@ -24,9 +24,9 @@ env:
   MY_GITHUB_TOKEN: ${{ secrets.PROJECT_TOKEN }}
 
 jobs:
-  assign_to_features:
+  features_project:
     runs-on: ubuntu-latest
-    name: Assign Issue/PR into "Features" Project
+    name: Add into "Features" Project
     # A "Issue" or "Pull Request" will go into "Features" project only if:
     # 1. The "Issue" has "feature_request" label
     # 2 The "Pull Request" has "feature" label
@@ -34,10 +34,10 @@ jobs:
       contains(github.event.issue.labels.*.name, 'feature_request') ||
       contains(github.event.pull_request.labels.*.name, 'feature')
     steps:
-      # A "Issue" or "Pull Request" will be added in "To do" colum only if:
-      # 1. The "Issue" was newly opened, reopened or labels were updated
-      # 2. No "Pull Requests" should be in "To do" column
-      - name: Assign to "To do" column
+      - name: Add to "To do" column
+        # A "Issue" or "Pull Request" will be added in "To do" colum only if:
+        # 1. The "Issue" was newly opened, reopened or labels were updated
+        # 2. No "Pull Requests" should be in "To do" column
         uses: srggrs/assign-one-project-github-action@1.2.0
         if: |
           github.event.action == 'opened' ||
